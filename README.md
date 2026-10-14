@@ -56,7 +56,7 @@ Everything below is configured through **secrets**, never in the code. Locally, 
 2. Open **APIs & Services → OAuth consent screen** (also called *Google Auth Platform*). Choose **External**, enter an app name and your e-mail.
 3. Open **Credentials → Create credentials → OAuth client ID → Web application**. Under **Authorized redirect URIs** add both:
    - `http://localhost:8501/oauth2callback` (for testing on your computer)
-   - `https://YOUR-APP-NAME.streamlit.app/oauth2callback` (your deployed app)
+   - `[https://studyflow-ai-t9tysmwmjwodxgw3nexqbz.streamlit.app/](https://studyflow-ai-t9tysmwmjwodxgw3nexqbz.streamlit.app/)/oauth2callback` (your deployed app)
 4. Copy the **Client ID** and **Client secret** into the `[auth.google]` section of your secrets. Set `redirect_uri` in `[auth]` to the address you are currently using (localhost or the deployed one) and `cookie_secret` to a long random string (`python -c "import secrets; print(secrets.token_urlsafe(32))"`).
 5. While the consent screen is in **Testing** mode only the Gmail addresses you list as *Test users* can sign in. To let any student sign in, click **Publish app**. The app asks only for the basic `openid`, `email` and `profile` information, which does not need Google's extra review.
 
